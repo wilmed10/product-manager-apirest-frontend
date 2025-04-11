@@ -2,6 +2,11 @@
 
 **Product Manager** is a full-stack web application for managing product inventories, built using the **PERN stack**: PostgreSQL, Express, React, and Node.js. This project serves as an educational and practical demonstration of how to build modern web applications using a REST API and a React frontend, enhanced with testing and API documentation.
 
+## 🌐 Live Demo
+
+👉 Try it here:  
+🔗 [https://product-manager-apirest-frontend.vercel.app/](https://product-manager-apirest-frontend.vercel.app/)
+
 
 ## ✨ Features
 
@@ -47,8 +52,8 @@
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/ProductManager-PERN.git
-cd ProductManager-PERN
+git clone https://github.com/wilmed10/product-manager-apirest-frontend.git
+cd product-manager-apirest-frontend
 ```
 
 ### 2. Install dependencies
