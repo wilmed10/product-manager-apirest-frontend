@@ -1,54 +1,125 @@
-# React + TypeScript + Vite
+# 🛍️ Product Manager - PERN Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Product Manager** is a full-stack web application for managing product inventories, built using the **PERN stack**: PostgreSQL, Express, React, and Node.js. This project serves as an educational and practical demonstration of how to build modern web applications using a REST API and a React frontend, enhanced with testing and API documentation.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🔧 Create, Read, Update, and Delete (CRUD) products
+- 🧩 Backend built with Express, Sequelize, and TypeScript
+- 🗃️ PostgreSQL integration for relational data management
+- ⚛️ Frontend built with React and TypeScript
+- 🎨 Modern styling using Tailwind CSS
+- ✅ Form validation with Valibot and express-validator
+- 📃 API documentation using Swagger
+- 🧪 Unit and integration tests with Jest and Supertest
+- 🚀 Deployment ready
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🧱 Tech Stack
+
+### Frontend
+- React 19
+- React Router DOM 7
+- TypeScript
+- Tailwind CSS
+- Axios
+- Valibot
+- Vite
+
+### Backend
+- Node.js
+- Express.js
+- Sequelize & Sequelize-TypeScript
+- PostgreSQL
+- TypeScript
+- dotenv, cors, morgan
+- Swagger (swagger-jsdoc + swagger-ui-express)
+
+### Testing
+- Jest
+- Supertest
+
+---
+
+## 📦 Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/ProductManager-PERN.git
+cd ProductManager-PERN
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- Backend
+```bash
+cd server
+npm install
 ```
+- Frontend
+```bash
+cd ../client
+npm install
+```
+
+### 3. Set up environment variables
+Create a .env file in both the server/ and client/ directories and provide the necessary environment variables such as database URL, port, etc.
+
+### 4. Run the app in development mode
+
+- Backend
+```bash
+cd server
+npm run dev
+```
+- Frontend
+```bash
+cd client
+npm run dev
+
+The frontend should be available at http://localhost:5173 and the backend at http://localhost:3000 (or whichever ports you configure).
+```
+
+
+## 🧪 Running Tests
+
+Backend tests are written using Jest and Supertest.
+
+```bash
+cd server
+npm test
+```
+
+You can also check test coverage with:
+
+```bash
+npm run test:coverage
+```
+
+
+## 📚 API Documentation
+The backend includes Swagger documentation. Once the server is running, visit:
+
+```bash
+http://localhost:3000/api/docs
+You will find all the available endpoints, request/response structures, and status codes.
+```
+
+## 🔒 Validation & Error Handling
+
+- Express Validator is used on the server side to ensure input data is clean and validated.
+- Valibot handles client-side form validation.
+- Consistent error responses using a middleware error handler.
+
+
+## 🛠️ Project Goals
+
+This project was created as a learning tool to practice:
+- Full Stack development using modern tools
+- REST API design and documentation
+- Testing backend APIs
+- Component-based architecture in React
+- TypeScript usage across both frontend and backend
+- Building and deploying real-world web applications
