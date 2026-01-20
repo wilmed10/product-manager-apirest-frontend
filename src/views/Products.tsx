@@ -4,9 +4,15 @@ import ProductDetails from "../components/ProductDetails";
 import { Product } from "../types";
 
 export async function loader() {
-  const products = await getProducts()
-  return products
+  try {
+    const products = await getProducts()
+    return Array.isArray(products) ? products : []
+  } catch (error) {
+    console.error(error)
+    return []
+  }
 }
+
 export async function action({request}: ActionFunctionArgs) {
   const data = Object.fromEntries(await request.formData())
   await updateProductAvailability(+data.id)
@@ -39,7 +45,7 @@ export default function Products() {
                 </tr>
             </thead>
             <tbody>
-              {products.map(product => (
+              {Array.isArray(products) && products.map(product => (
                 <ProductDetails
                   key={product.id}
                   product={product}

@@ -5,14 +5,18 @@ import { getProductById, updateProduct } from "../services/ProductService";
 import { Product } from "../types";
 import ProductForm from "../components/ProductForm";
 
-export async function loader({params}: LoaderFunctionArgs) {
-    if(params.id !== undefined) {
-        const product = await getProductById(+params.id)
-        if(!product) {
-            return redirect('/')
-        }
-        return product
+export async function loader({ params }: LoaderFunctionArgs) {
+    if (!params.id) {
+        throw new Response("Producto no encontrado", { status: 404 })
     }
+
+    const product = await getProductById(+params.id)
+
+    if (!product) {
+        throw new Response("Producto no encontrado", { status: 404 })
+    }
+
+    return product
 }
 
 export async function action({request, params}: ActionFunctionArgs) {
